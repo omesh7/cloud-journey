@@ -4,7 +4,6 @@ variable "tags" {
   default = {
     Environment = "development"
     Project     = "own-server"
-    Owner       = "omesh"
   }
 
 }
