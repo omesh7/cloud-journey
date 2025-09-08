@@ -90,3 +90,5 @@ TEMPLATE INFRA
 
 ssh-key
 *.pub
+
+ssh

@@ -1,0 +1,8 @@
+the control plane is my conputer so i need just manager nodes for this 
+
+use wsl: 
+
+sudo apt update
+sudo apt install ansible
+
+ansible --version
