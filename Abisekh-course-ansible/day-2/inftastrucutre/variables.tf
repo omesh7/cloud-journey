@@ -6,7 +6,7 @@ variable "aws_region" {
 }
 
 variable "environment" {
-  description = "Environment (local or ci)"
+  description = "Environment"
   type        = string
   default     = "local"
 }
@@ -15,7 +15,7 @@ variable "environment" {
 # File uploads handled by CI/CD pipeline
 
 variable "tags" {
-  description = "Tags to apply to resources"
+
   type        = map(string)
   default = {
     Project     = "ansible-learn"

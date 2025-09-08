@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Get terraform output and extract IPs
-cd infrastructure
+cd inftastrucutre
 NODE1_IP=$(terraform output -json managed_nodes_ips | jq -r '.["node-1"].public_ip')
 NODE2_IP=$(terraform output -json managed_nodes_ips | jq -r '.["node-2"].public_ip')
 NODE3_IP=$(terraform output -json managed_nodes_ips | jq -r '.["node-3"].public_ip')

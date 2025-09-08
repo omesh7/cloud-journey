@@ -70,3 +70,26 @@ ansible databases -i inventory.ini -m ping
 - Test ad-hoc commands
 - Create first playbook
 - Explore Ansible modules
+
+
+//------------------
+
+install jdk example:
+for one node only:
+
+ansible node-1 -i inventory.ini -m package -a "name=java-1.8.0-openjdk state=present" --become 
+
+#--become  Switches to a privileged user (usually root)
+
+ansible node-1 -i inventory.ini -m shell -a "sudo yum install -y java-1.8.0-openjdk" #shell equu\ivalent
+
+
+//---------
+
+for all:
+ansible all -i inventory.ini -m package -a "name=java-1.8.0-openjdk state=present" --become
+
+to uninstall:
+ansible all -i inventory.ini -m package -a "name=java-1.8.0-openjdk state=absent" --become
+
+
