@@ -1,0 +1,22 @@
+# Ansible Commands for Day 3
+
+# 1. Test connectivity to all servers
+ansible all -i inventory.ini -m ping
+
+# 2. Check if servers are reachable and gather facts
+ansible all -i inventory.ini -m setup --limit webservers
+
+# 3. Run the playbook to install Apache and deploy index.html
+ansible-playbook -i inventory.ini first-playbook.yaml
+
+# 4. Verify Apache is running on all servers
+ansible webservers -i inventory.ini -m service -a "name=apache2 state=started" --become
+
+# 5. Check Apache status
+ansible webservers -i inventory.ini -m command -a "systemctl status apache2" --become
+
+# 6. Test web server response (optional)
+ansible webservers -i inventory.ini -m uri -a "url=http://{{ ansible_default_ipv4.address }}"
+
+# Note: Make sure to update inventory.ini with actual public IP addresses after running terraform apply
+# You can get the IPs from terraform output or AWS console

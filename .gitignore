@@ -92,3 +92,5 @@ ssh-key
 *.pub
 
 ssh
+.vscode
+.kiro

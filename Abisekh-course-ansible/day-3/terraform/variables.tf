@@ -16,3 +16,8 @@ variable "tags" {
     Environment = "portfolio"
   }
 }
+
+variable "day_no" {
+  type = string
+  default = "03"
+}

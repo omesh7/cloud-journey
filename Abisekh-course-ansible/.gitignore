@@ -1,0 +1,4 @@
+terraform-modules
+.venv
+.terraform
+ansible-env
